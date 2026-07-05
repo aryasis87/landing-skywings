@@ -116,13 +116,13 @@ export default function Contact() {
             </div>
             {/* Social Media Links */}
             <div className="flex items-center space-x-6 pt-4">
-              <a href="#" aria-label="Facebook" className="text-blue-600 hover:text-blue-800">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-blue-600 hover:text-blue-800">
                 <FaFacebookF className="text-2xl" />
               </a>
-              <a href="#" aria-label="Twitter" className="text-blue-600 hover:text-blue-800">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-blue-600 hover:text-blue-800">
                 <FaTwitter className="text-2xl" />
               </a>
-              <a href="#" aria-label="Instagram" className="text-blue-600 hover:text-blue-800">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-blue-600 hover:text-blue-800">
                 <FaInstagram className="text-2xl" />
               </a>
             </div>
