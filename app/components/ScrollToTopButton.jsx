@@ -45,7 +45,7 @@ export default function ScrollToTopButton() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          className="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-gray-700 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 z-50"
+          className="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-aviation hover:bg-boarding text-sky p-4 rounded-full shadow-lg transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-boarding z-50"
         >
           <FaArrowUp size={20} aria-hidden="true" />
         </motion.button>

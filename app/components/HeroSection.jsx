@@ -22,7 +22,7 @@ export default function HeroSection() {
       initial="hidden"
       animate="show"
       variants={staggerContainer}
-      className="relative px-4 md:px-6 lg:px-16 pt-4 md:pt-6 pb-12 md:pb-16 lg:pb-24 bg-gradient-to-b from-blue-100 to-white overflow-hidden"
+      className="relative px-4 md:px-6 lg:px-16 pt-4 md:pt-6 pb-12 md:pb-16 lg:pb-24 bg-gradient-to-b from-[#a8d0ef] via-[#d9e9f7] to-sky overflow-hidden"
     >
       {/* Animated Blob Background - Optimized with aria-hidden */}
       <motion.div
@@ -33,7 +33,7 @@ export default function HeroSection() {
         aria-hidden="true"
       >
         <svg
-          className="absolute inset-x-0 bottom-0 h-[800px] w-full text-gray-100"
+          className="absolute inset-x-0 bottom-0 h-[800px] w-full text-slate-ink"
           preserveAspectRatio="none"
           viewBox="0 0 1440 600"
           role="img"
@@ -55,10 +55,7 @@ export default function HeroSection() {
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
         {/* Text Content */}
-        <motion.div
-          variants={staggerContainer}
-          className="order-2 lg:order-1 text-center lg:text-left relative"
-        >
+        <div className="relative order-2 text-center lg:order-1 lg:text-left">
           {/* Airplane animation untuk mobile */}
           <motion.div
             initial={{ x: "-100vw", opacity: 0 }}
@@ -91,32 +88,19 @@ export default function HeroSection() {
 
           {/* Animated Heading */}
           <motion.h1
-            variants={fadeInUp}
-            className="text-5xl lg:text-7xl font-black leading-[1.1] mb-2 p-2 py-3 text-transparent bg-clip-text"
-            style={{
-              backgroundImage: "linear-gradient(to right, #1e40af, #06b6d4)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-            initial={{ opacity: 0, y: -20, scale: 0.95, rotateX: 15 }}
-            animate={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
-            transition={{ duration: 0.8, type: "spring", stiffness: 80 }}
+            className="mb-2 py-3 text-5xl leading-[1.05] font-black text-aviation lg:text-7xl"
           >
-            Experience The Magic
+            Terbang tanpa
             <br />
-            Of Flight!
+            <span className="text-runway">tanda tanya.</span>
           </motion.h1>
 
           {/* Animated Paragraph */}
           <motion.p
-            variants={fadeInUp}
-            className="text-gray-700 text-lg lg:text-xl mb-10 max-w-md mx-auto lg:mx-0"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mx-auto mb-10 max-w-md text-lg text-slate-ink lg:mx-0 lg:text-xl"
           >
-            Temukan penawaran terbaik untuk perjalanan Anda. Nikmati kemudahan
-            pemesanan tiket dan pengalaman yang tak terlupakan bersama SkyWings.
+            Harga yang tertera sudah termasuk semuanya, kursi dipilih sejak awal,
+            dan status penerbangan dikabari tanpa perlu Anda tanya lebih dulu.
           </motion.p>
 
           {/* Animated Buttons */}
@@ -127,31 +111,25 @@ export default function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative group bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-5 rounded-full font-semibold text-white shadow-lg transition-transform duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              aria-label="Book tickets now"
+              className="relative group bg-gradient-to-r from-boarding to-cyan-500 px-8 py-5 rounded-full font-semibold text-sky shadow-lg transition-transform duration-300"
+              aria-label="Pesan tiket sekarang"
             >
               <span className="relative z-10">Pesan Tiket</span>
-              <span className="absolute inset-0 bg-white/20 group-hover:bg-white/40 transition-opacity rounded-full"></span>
+              <span className="absolute inset-0 bg-sky/20 group-hover:bg-sky/40 transition-opacity rounded-full"></span>
             </motion.button>
 
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setShowVideo(true)}
-              className="relative group bg-white px-8 py-5 rounded-full font-semibold text-blue-600 shadow-lg transition-all duration-300 hover:bg-gray-100 flex items-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              aria-label="Watch promotional video"
+              className="relative group flex items-center rounded-full bg-sky px-8 py-5 font-semibold text-aviation shadow-lg ring-1 ring-aviation/15 transition-all duration-300 hover:bg-sky-2"
+              aria-label="Tonton video promosi"
             >
-              <FaPlay className="mr-3 w-5 h-5 text-blue-600" aria-hidden="true" />
+              <FaPlay className="mr-3 h-5 w-5 text-runway" aria-hidden="true" />
               <span className="relative z-10">Tonton Video</span>
             </motion.button>
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Airplane animation untuk desktop */}
         <motion.div

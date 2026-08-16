@@ -3,6 +3,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import HeroSection from "./components/HeroSection";
+import DepartureBoard from './components/DepartureBoard';
 import PopularDestinations from "./components/PopularDestinations";
 import JourneySection from "./components/JourneySection";
 import PromoSection from "./components/PromoSection";
@@ -20,6 +21,7 @@ export default function Home() {
       <JourneySection />
       <PromoSection />
       <FeaturesSection />
+      <DepartureBoard />
       <PricingSection />
       <FAQSection />
       <Message />

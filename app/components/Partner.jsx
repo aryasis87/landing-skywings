@@ -37,7 +37,7 @@ export default function PartnerStatsSection() {
   return (
     <section
       id="partners-stats"
-      className="px-6 lg:px-16 py-12 bg-gradient-to-b from-gray-50 to-white"
+      className="px-6 lg:px-16 py-12 bg-gradient-to-b from-sky-2 to-white"
     >
       {/* Header */}
       <motion.div
@@ -46,10 +46,10 @@ export default function PartnerStatsSection() {
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto text-center mb-12"
       >
-        <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+        <h2 className="text-4xl lg:text-5xl font-bold text-aviation mb-4">
           Mitra Terpercaya Kami di Indonesia
         </h2>
-        <p className="text-lg text-gray-700">
+        <p className="text-lg text-slate-ink">
           Kami telah berkolaborasi dengan perusahaan terkemuka Indonesia.
         </p>
       </motion.div>
@@ -58,7 +58,7 @@ export default function PartnerStatsSection() {
       <div className="relative max-w-5xl mx-auto overflow-hidden mb-16">
         <motion.div
           className="flex space-x-8"
-          initial={{ x: 0 }}
+          initial={{ y: 0 }}
           animate={{ x: "-50%" }}
           transition={{ ease: "linear", duration: 20, repeat: Infinity }}
           style={{ animationPlayState: "running" }}
@@ -85,12 +85,12 @@ export default function PartnerStatsSection() {
         {/* Overlay kiri */}
         <div
           aria-hidden="true"
-          className="absolute left-0 top-0 w-16 h-full pointer-events-none bg-gradient-to-r from-gray-50 to-transparent"
+          className="absolute left-0 top-0 w-16 h-full pointer-events-none bg-gradient-to-r from-sky-2 to-transparent"
         />
         {/* Overlay kanan */}
         <div
           aria-hidden="true"
-          className="absolute right-0 top-0 w-16 h-full pointer-events-none bg-gradient-to-l from-gray-50 to-transparent"
+          className="absolute right-0 top-0 w-16 h-full pointer-events-none bg-gradient-to-l from-sky-2 to-transparent"
         />
       </div>
 
@@ -101,7 +101,7 @@ export default function PartnerStatsSection() {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="max-w-4xl mx-auto text-center mb-8"
       >
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">Statistics</h2>
+        <h2 className="text-4xl font-bold text-aviation mb-4">Statistics</h2>
       </motion.div>
 
       {/* Bar Chart */}

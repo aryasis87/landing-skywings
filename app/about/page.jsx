@@ -40,7 +40,7 @@ export default function About() {
   ];
   
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+    <section className="relative overflow-hidden bg-gradient-to-b from-boarding to-white">
       {/* Background Pattern (Contoh SVG abstrak sebagai dekorasi) */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -77,13 +77,13 @@ export default function About() {
         >
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl lg:text-6xl font-extrabold mb-8 text-blue-900 tracking-tight"
+            className="text-5xl lg:text-6xl font-extrabold mb-8 text-aviation tracking-tight"
           >
             Tentang SkyWings
           </motion.h1>
           <motion.p
             variants={fadeInUp}
-            className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-12"
+            className="text-xl lg:text-2xl text-slate-ink leading-relaxed max-w-3xl mx-auto mb-12"
           >
             SkyWings didirikan untuk memberikan pengalaman penerbangan yang aman, nyaman, dan terjangkau.
             Dengan tim profesional dan teknologi canggih, setiap perjalanan Anda adalah pengalaman yang tak terlupakan.
@@ -96,17 +96,17 @@ export default function About() {
             <motion.div
               key={index}
               variants={fadeInUp}
-              className="p-10 bg-white rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:-translate-y-1"
+              className="p-10 bg-sky rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:-translate-y-1"
             >
               <motion.h3
                 variants={fadeInLeft}
-                className="text-3xl font-bold mb-6 text-blue-800"
+                className="text-3xl font-bold mb-6 text-aviation"
               >
                 {item} Kami
               </motion.h3>
               <motion.p
                 variants={fadeInRight}
-                className="text-lg text-gray-600"
+                className="text-lg text-slate-ink"
               >
                 {item === "Misi"
                   ? "Menyediakan pengalaman penerbangan inovatif dengan harga terjangkau, menggunakan teknologi mutakhir dan pelayanan terbaik."
@@ -126,13 +126,13 @@ export default function About() {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl lg:text-5xl font-bold text-center text-blue-900 mb-12"
+            className="text-4xl lg:text-5xl font-bold text-center text-aviation mb-12"
           >
             Perjalanan Kami
           </motion.h2>
           <div className="relative">
             {/* Garis timeline vertikal */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-blue-200"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-sky-2"></div>
             <div className="space-y-12">
               {milestones.map((milestone, idx) => (
                 <motion.div
@@ -140,12 +140,12 @@ export default function About() {
                   variants={fadeInUp}
                   className="relative flex flex-col md:flex-row items-center"
                 >
-                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold z-10">
+                  <div className="w-16 h-16 bg-boarding rounded-full flex items-center justify-center text-sky font-bold z-10">
                     {milestone.year}
                   </div>
-                  <div className="mt-4 md:mt-0 md:ml-6 p-6 bg-white rounded-xl shadow-xl">
-                    <h4 className="text-2xl font-bold text-blue-800">{milestone.title}</h4>
-                    <p className="mt-2 text-gray-600">{milestone.description}</p>
+                  <div className="mt-4 md:mt-0 md:ml-6 p-6 bg-sky rounded-xl shadow-xl">
+                    <h4 className="text-2xl font-bold text-aviation">{milestone.title}</h4>
+                    <p className="mt-2 text-slate-ink">{milestone.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -163,7 +163,7 @@ export default function About() {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl lg:text-5xl font-bold text-blue-900 mb-12"
+            className="text-4xl lg:text-5xl font-bold text-aviation mb-12"
           >
             Tim Profesional Kami
           </motion.h2>
@@ -172,13 +172,13 @@ export default function About() {
               <motion.div
                 key={idx}
                 variants={fadeInUp}
-                className="bg-white rounded-2xl shadow-2xl p-6 transform transition-all hover:-translate-y-2 hover:shadow-3xl"
+                className="bg-sky rounded-2xl shadow-2xl p-6 transform transition-all hover:-translate-y-2 hover:shadow-3xl"
               >
                 <div className="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
                   <img src={member.image} alt={member.name} className="object-cover w-full h-full" />
                 </div>
-                <h4 className="text-2xl font-bold text-blue-800">{member.name}</h4>
-                <p className="text-gray-600">{member.role}</p>
+                <h4 className="text-2xl font-bold text-aviation">{member.name}</h4>
+                <p className="text-slate-ink">{member.role}</p>
               </motion.div>
             ))}
           </div>

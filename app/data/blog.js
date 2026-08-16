@@ -8,7 +8,7 @@ export const blogPosts = [
       "Pelajari cara memesan tiket dengan cepat dan mudah melalui platform kami.",
     content:
       "Konten lengkap tentang cara memesan tiket. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat commodo lacus, non aliquam ex.",
-    image: "/images/blog1.jpg",
+    image: "/images/yogyakarta.jpg",
     date: "2025-01-01",
     category: "Promo",
     url: "http://localhost:3000/blog/cara-memesan-tiket",
@@ -21,7 +21,7 @@ export const blogPosts = [
       "Dapatkan promo diskon tiket spesial hanya untuk waktu terbatas.",
     content:
       "Konten lengkap tentang diskon tiket. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in risus ac erat scelerisque tincidunt.",
-    image: "/images/blog4.jpg",
+    image: "/images/bali.jpg",
     date: "2025-01-15",
     category: "Promo",
     url: "http://localhost:3000/blog/diskon-tiket-spesial",
@@ -34,7 +34,7 @@ export const blogPosts = [
       "Beberapa tips dan trik untuk membuat perjalanan Anda lebih menyenangkan.",
     content:
       "Konten lengkap tentang tips perjalanan. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/blog2.jpg",
+    image: "/images/raja-ampat.jpg",
     date: "2025-02-15",
     category: "Tips",
     url: "http://localhost:3000/blog/tips-perjalanan",
@@ -47,7 +47,7 @@ export const blogPosts = [
       "Cara packing yang efisien agar perjalanan Anda lebih nyaman.",
     content:
       "Konten lengkap tentang panduan packing. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/images/blog5.jpg",
+    image: "/images/lombok.jpg",
     date: "2025-03-01",
     category: "Tips",
     url: "http://localhost:3000/blog/panduan-packing",
@@ -60,7 +60,7 @@ export const blogPosts = [
       "Mengulas teknologi dan prosedur keamanan penerbangan saat ini.",
     content:
       "Konten lengkap tentang keamanan penerbangan. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    image: "/images/blog3.jpg",
+    image: "/images/city.jpg",
     date: "2025-03-10",
     category: "Inovasi",
     url: "http://localhost:3000/blog/keamanan-penerbangan",
@@ -73,7 +73,7 @@ export const blogPosts = [
       "Inovasi teknologi terkini yang mengubah wajah industri penerbangan.",
     content:
       "Konten lengkap tentang teknologi terbaru dalam industri penerbangan. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/images/blog6.jpg",
+    image: "/images/mountain.jpg",
     date: "2025-04-01",
     category: "Inovasi",
     url: "http://localhost:3000/blog/teknologi-terbaru",

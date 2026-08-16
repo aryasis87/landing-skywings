@@ -12,7 +12,7 @@ export default function FAQSection() {
   return (
     <section 
       id="faq" 
-      className="px-6 lg:px-16 py-12 bg-gradient-to-b from-gray-100 to-gray-50"
+      className="px-6 lg:px-16 py-12 bg-gradient-to-b from-sky-2 to-sky-2"
       aria-labelledby="faq-heading"
     >
       <motion.div 
@@ -25,13 +25,13 @@ export default function FAQSection() {
         <motion.h2 
           variants={fadeInUp}
           id="faq-heading"
-          className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
+          className="text-3xl lg:text-4xl font-bold text-aviation mb-4"
         >
           Pertanyaan yang Sering Diajukan (FAQ)
         </motion.h2>
         <motion.p 
           variants={fadeInUp}
-          className="text-gray-600"
+          className="text-slate-ink"
         >
           Jawaban atas pertanyaan yang sering diajukan
         </motion.p>
@@ -42,15 +42,15 @@ export default function FAQSection() {
           <motion.div 
             key={faq.id} 
             variants={fadeInUp}
-            className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg"
+            className="bg-sky rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg"
           >
             <button 
               onClick={() => toggleFAQ(faq.id)}
-              className="w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              className="w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-boarding focus-visible:ring-offset-2"
               aria-expanded={activeFAQ === faq.id}
               aria-controls={`faq-content-${faq.id}`}
             >
-              <span className="text-lg font-medium text-gray-900">
+              <span className="text-lg font-medium text-aviation">
                 {faq.question}
               </span>
               <span 
@@ -69,10 +69,10 @@ export default function FAQSection() {
                   animate={{ height: "auto" }}
                   exit={{ height: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="px-6 pb-5 border-t border-gray-100"
+                  className="px-6 pb-5 border-t border-aviation/12"
                   role="region"
                 >
-                  <p className="text-gray-700 mt-3">{faq.answer}</p>
+                  <p className="text-slate-ink mt-3">{faq.answer}</p>
                 </motion.div>
               )}
             </AnimatePresence>

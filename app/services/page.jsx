@@ -7,7 +7,7 @@ import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "../utils/an
 const services = [
   {
     icon: (
-      <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-12 h-12 text-boarding" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
       </svg>
     ),
@@ -16,7 +16,7 @@ const services = [
   },
   {
     icon: (
-      <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-12 h-12 text-boarding" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
@@ -25,7 +25,7 @@ const services = [
   },
   {
     icon: (
-      <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-12 h-12 text-boarding" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 18.657A8 8 0 1112 16a8 8 0 015.657 2.657zm-2.536-5.354a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414-1.414l-3-3z" />
       </svg>
     ),
@@ -36,7 +36,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white py-16 px-6 lg:px-16">
+    <section className="relative overflow-hidden bg-gradient-to-br from-sky-2 to-white py-16 px-6 lg:px-16">
       {/* Background Decorative SVG */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -74,13 +74,13 @@ export default function Services() {
         >
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4"
+            className="text-5xl lg:text-6xl font-extrabold text-aviation mb-4"
           >
             Layanan Kami
           </motion.h1>
           <motion.p
             variants={fadeInUp}
-            className="text-xl lg:text-2xl text-gray-700"
+            className="text-xl lg:text-2xl text-slate-ink"
           >
             Solusi lengkap untuk kebutuhan perjalanan Anda dengan teknologi terkini dan layanan profesional.
           </motion.p>
@@ -98,20 +98,20 @@ export default function Services() {
               key={index}
               variants={fadeInUp}
               whileHover={{ scale: 1.05, rotate: 1 }}
-              className="p-8 bg-white rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:-translate-y-2"
+              className="p-8 bg-sky rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:-translate-y-2"
             >
               <div className="flex items-center justify-center mb-6">
                 {service.icon}
               </div>
               <motion.h3
                 variants={fadeInUp}
-                className="text-2xl font-bold mb-3 text-blue-800"
+                className="text-2xl font-bold mb-3 text-aviation"
               >
                 {service.title}
               </motion.h3>
               <motion.p
                 variants={fadeInUp}
-                className="text-gray-600"
+                className="text-slate-ink"
               >
                 {service.desc}
               </motion.p>
@@ -128,13 +128,13 @@ export default function Services() {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl font-bold text-blue-900 mb-6"
+            className="text-4xl font-bold text-aviation mb-6"
           >
             Mengapa Memilih Kami?
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-gray-700 max-w-3xl mx-auto"
+            className="text-lg text-slate-ink max-w-3xl mx-auto"
           >
             Kami mengutamakan inovasi, kenyamanan, dan keamanan dalam setiap layanan.
             Dengan dukungan teknologi canggih dan tim profesional, kami memastikan setiap

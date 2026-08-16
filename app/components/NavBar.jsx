@@ -33,7 +33,7 @@ export default function NavBar() {
       initial={{ y: 0 }}
       animate={{ y: showNavbar ? 0 : "-100%" }}
       transition={{ duration: 0.3 }}
-      className="sticky top-0 z-50 bg-white shadow-lg"
+      className="sticky top-0 z-50 bg-sky shadow-lg"
       aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-4 py-2 md:px-6 md:py-4 flex items-center justify-between">
@@ -42,7 +42,7 @@ export default function NavBar() {
           href="/" 
           passHref
           aria-label="Homepage"
-          className="text-xl md:text-2xl font-bold text-gray-600 text-primary tracking-wider cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded"
+          className="text-xl md:text-2xl font-bold text-slate-ink text-primary tracking-wider cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-boarding focus-visible:ring-offset-2 rounded"
         >
           SkyWings
         </Link>
@@ -53,7 +53,7 @@ export default function NavBar() {
             <li key={item}>
               <Link
                 href={item.toLowerCase() === "home" ? "/" : `/${item.toLowerCase()}`}
-                className="relative text-gray-700 hover:text-primary transition-colors duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded px-2 py-1"
+                className="relative text-slate-ink hover:text-primary transition-colors duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-boarding focus-visible:ring-offset-2 rounded px-2 py-1"
                 aria-label={`Navigate to ${item}`}
               >
                 {item}
@@ -65,7 +65,7 @@ export default function NavBar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 p-2 rounded"
+          className="md:hidden text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-boarding focus-visible:ring-offset-2 p-2 rounded"
           onClick={toggleNav}
           aria-label={navOpen ? "Close menu" : "Open menu"}
           aria-expanded={navOpen}
@@ -83,7 +83,7 @@ export default function NavBar() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -30, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white shadow-md"
+            className="md:hidden bg-sky shadow-md"
             id="mobile-menu"
           >
             <ul className="flex flex-col px-6 py-4 space-y-2">
@@ -91,7 +91,7 @@ export default function NavBar() {
                 <li key={item}>
                   <Link
                     href={item.toLowerCase() === "home" ? "/" : `/${item.toLowerCase()}`}
-                    className="block py-3 text-lg text-gray-700 hover:bg-gray-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded px-2"
+                    className="block py-3 text-lg text-slate-ink hover:bg-sky transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-boarding focus-visible:ring-offset-2 rounded px-2"
                     onClick={toggleNav}
                     aria-label={`Navigate to ${item}`}
                   >

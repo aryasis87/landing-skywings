@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="px-6 lg:px-16 py-5 bg-gray-800 text-gray-300">
+    <footer className="px-6 lg:px-16 py-5 bg-aviation text-slate-ink">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-center md:text-left">
           <p className="text-sm">&copy; 2025 SkyWings. All rights reserved.</p>

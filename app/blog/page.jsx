@@ -23,7 +23,7 @@ export default function Blog() {
 
   return (
     <ClientOnly>
-      <section className="px-6 lg:px-16 py-10 lg:py-16 bg-gray-50">
+      <section className="px-6 lg:px-16 py-10 lg:py-16 bg-sky">
         {/* Header */}
         <motion.div
           variants={staggerContainer}
@@ -34,13 +34,13 @@ export default function Blog() {
         >
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl lg:text-6xl font-extrabold mb-4 text-blue-900"
+            className="text-5xl lg:text-6xl font-extrabold mb-4 text-aviation"
           >
             Blog Terbaru
           </motion.h1>
           <motion.p
             variants={fadeInUp}
-            className="text-xl lg:text-2xl text-gray-700"
+            className="text-xl lg:text-2xl text-slate-ink"
           >
             Tips perjalanan, promo tiket, dan informasi terbaru untuk Anda
           </motion.p>
@@ -58,7 +58,7 @@ export default function Blog() {
               <motion.div
                 key={post.id}
                 variants={fadeInUp}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
+                className="bg-sky rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
               >
                 <div className="relative aspect-video">
                   <Image
@@ -70,13 +70,13 @@ export default function Blog() {
                   />
                 </div>
                 <div className="p-6">
-                  <h2 className="text-2xl font-semibold mb-3 text-blue-800">
+                  <h2 className="text-2xl font-semibold mb-3 text-aviation">
                     {post.title}
                   </h2>
-                  <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                  <p className="text-slate-ink mb-4">{post.excerpt}</p>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2"
+                    className="text-boarding hover:text-aviation font-medium flex items-center gap-2"
                   >
                     Baca Selengkapnya
                     <svg

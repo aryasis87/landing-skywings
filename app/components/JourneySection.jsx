@@ -37,16 +37,16 @@ Kelas: ${flightClass}`;
   };
 
   const formStepVariants = {
-    initial: { opacity: 0, x: 50 },
+    initial: { opacity: 0, y: 50 },
     animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -50 },
+    exit: { opacity: 0, y: 50 },
   };
 
   return (
     <section
       id="journey"
       aria-labelledby="journey-title"
-      className="px-6 lg:px-16 py-8 bg-gradient-to-b from-gray-50 to-gray-100"
+      className="px-6 lg:px-16 py-8 bg-gradient-to-b from-sky-2 to-sky-2"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Kiri: Info */}
@@ -55,7 +55,7 @@ Kelas: ${flightClass}`;
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="bg-white rounded-2xl p-10 shadow-xl transform transition-all hover:scale-[1.01]"
+          className="bg-sky rounded-2xl p-10 shadow-xl transform transition-all hover:scale-[1.01]"
         >
           <motion.h2
             id="journey-title"
@@ -85,14 +85,14 @@ Kelas: ${flightClass}`;
             ].map((item, index) => (
               <motion.li
                 key={index}
-                className="flex items-center gap-4 text-lg text-gray-700"
+                className="flex items-center gap-4 text-lg text-slate-ink"
                 variants={{
-                  hidden: { opacity: 0, x: -20 },
-                  show: { opacity: 1, x: 0 },
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0 },
                 }}
               >
                 <span
-                  className="bg-blue-600 text-white rounded-full p-1"
+                  className="bg-boarding text-sky rounded-full p-1"
                   aria-hidden="true"
                 >
                   <svg
@@ -122,9 +122,9 @@ Kelas: ${flightClass}`;
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="bg-white rounded-2xl p-8 shadow-xl space-y-8"
+          className="bg-sky rounded-2xl p-8 shadow-xl space-y-8"
         >
-          <h3 className="text-2xl font-bold text-blue-900">Form Penerbangan</h3>
+          <h3 className="text-2xl font-bold text-aviation">Form Penerbangan</h3>
           <AnimatePresence mode="wait">
             {step === 1 && (
               <motion.div
@@ -285,7 +285,7 @@ Kelas: ${flightClass}`;
             aria-modal="true"
           >
             <motion.div
-              className="bg-white rounded-2xl p-6 max-w-lg w-full relative"
+              className="bg-sky rounded-2xl p-6 max-w-lg w-full relative"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -293,15 +293,15 @@ Kelas: ${flightClass}`;
             >
               <button
                 onClick={() => setShowResultModal(false)}
-                className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl"
+                className="absolute top-2 right-2 text-slate-ink hover:text-aviation text-2xl"
                 aria-label="Tutup"
               >
                 &times;
               </button>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-aviation mb-4">
                 Detail Penerbangan
               </h3>
-              <div className="bg-gray-100 p-4 rounded-lg mb-6 whitespace-pre-line text-gray-800">
+              <div className="bg-sky p-4 rounded-lg mb-6 whitespace-pre-line text-aviation">
                 {formResultText}
               </div>
               <div className="flex justify-end gap-4">

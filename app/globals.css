@@ -1,10 +1,113 @@
 @import "tailwindcss";
 
-:root {
+/* ==========================================================================
+   SkyWings — bahasa rupa BOARDING PASS.
+   Yang dijual di sini adalah kepastian berangkat, dan benda yang paling
+   mewakilinya adalah pas naik: tepi berlubang, kode bandara tiga huruf,
+   jam dalam angka rata, dan garis putus tempat sobekan. Semua itu dipakai
+   sebagai perangkat desain, bukan hiasan.
+   ========================================================================== */
+
+@theme {
+  --color-aviation: #0b2545; /* biru penerbangan — bidang gelap */
+  --color-aviation-2: #143a68;
+  --color-sky: #f3f6fa; /* putih langit — kertas pas naik */
+  --color-sky-2: #e2e9f2;
+  --color-slate-ink: #43536b; /* teks sekunder */
+  --color-runway: #ff6b35; /* jingga penanda — hemat pemakaian */
+  --color-boarding: #1b7fd4; /* biru aksen */
 }
 
-body {
-  font-family: var(--font-inter), system-ui, sans-serif;
+@layer base {
+  body {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    background-color: var(--color-sky);
+    color: var(--color-slate-ink);
+  }
+
+  /* Warna judul sengaja TIDAK dipaksa di sini: beberapa bagian memakai kartu
+     berlatar navy, dan aturan global membuat judulnya senada dengan latar
+     sehingga tak terbaca. Tiap bagian menetapkan warnanya sendiri. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-outfit), system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
 }
 
-h1, h2, h3 { font-family: var(--font-outfit), system-ui, sans-serif; letter-spacing: -0.02em; }
+/* --------------------------------------------------------------------------
+   1. Label pas naik — kapital renggang, angka rata seperti cetakan tiket
+   -------------------------------------------------------------------------- */
+.pass-label {
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Kode bandara & jam — selalu rata lebarnya agar berbaris rapi */
+.pass-code {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  font-weight: 800;
+}
+
+/* --------------------------------------------------------------------------
+   2. Tepi berlubang — sobekan pas naik
+   -------------------------------------------------------------------------- */
+.perforation {
+  background-image: radial-gradient(circle at 50% 50%, currentColor 0 2.5px, transparent 2.5px);
+  background-size: 12px 12px;
+  background-repeat: repeat-x;
+  height: 12px;
+  opacity: 0.28;
+}
+
+/* Takik bulat di sisi kiri-kanan kartu, seperti bekas pelubang tiket */
+.notch::before,
+.notch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: var(--color-sky);
+  transform: translateY(-50%);
+}
+.notch::before { left: -10px; }
+.notch::after { right: -10px; }
+
+/* --------------------------------------------------------------------------
+   3. Garis rute — lengkungan tipis antara dua kota
+   -------------------------------------------------------------------------- */
+.route-dash {
+  background-image: linear-gradient(to right, currentColor 0 6px, transparent 6px 12px);
+  background-size: 12px 1px;
+  background-repeat: repeat-x;
+  height: 1px;
+  opacity: 0.45;
+}
+
+/* --------------------------------------------------------------------------
+   4. Aksesibilitas
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--color-runway);
+  outline-offset: 3px;
+}

@@ -8,18 +8,18 @@ export default function PopularDestinations() {
   return (
     <section
       id="destinations"
-      className="bg-white py-16 px-4 sm:px-8 lg:px-16"
+      className="bg-sky py-16 px-4 sm:px-8 lg:px-16"
       aria-labelledby="destinations-heading"
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2
             id="destinations-heading"
-            className="text-4xl font-extrabold text-gray-900 mb-2"
+            className="text-4xl font-extrabold text-aviation mb-2"
           >
             Destinasi Terpopuler
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-ink max-w-2xl mx-auto text-lg">
             Jelajahi tempat liburan favorit yang dipilih oleh para pelancong
           </p>
         </div>
@@ -28,7 +28,7 @@ export default function PopularDestinations() {
           {popularDestinationsData.map((dest) => (
             <article
               key={dest.id}
-              className="bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition duration-300 overflow-hidden border border-gray-100"
+              className="bg-sky rounded-2xl shadow-sm hover:shadow-md transition duration-300 overflow-hidden border border-aviation/12"
             >
               <div className="relative w-full h-64">
                 <Image
@@ -40,22 +40,22 @@ export default function PopularDestinations() {
                   loading="lazy"
                 />
                 {dest.discount && (
-                  <div className="absolute top-4 left-4 bg-black text-white text-sm font-semibold px-3 py-1 rounded-full">
+                  <div className="absolute top-4 left-4 bg-black text-sky text-sm font-semibold px-3 py-1 rounded-full">
                     {dest.discount} OFF
                   </div>
                 )}
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-aviation mb-2">
                   {dest.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                <p className="text-slate-ink text-sm mb-4 line-clamp-3">
                   {dest.description}
                 </p>
                 <div className="flex items-center text-sm text-yellow-500">
                   <FaStar className="mr-1" />
-                  <span className="text-gray-700">4.5 rating</span>
+                  <span className="text-slate-ink">4.5 rating</span>
                 </div>
               </div>
             </article>

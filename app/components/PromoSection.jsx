@@ -15,7 +15,7 @@ export default function PromoSection() {
   return (
     <section
       id="promo"
-      className="px-6 lg:px-16 pt-8 pb-0 lg:pb-16 bg-gradient-to-b from-gray-100 to-gray-200"
+      className="px-6 lg:px-16 pt-8 pb-0 lg:pb-16 bg-gradient-to-b from-sky-2 to-sky-2"
     >
       <motion.div
         variants={prefersReducedMotion ? undefined : staggerContainer}
@@ -70,7 +70,7 @@ export default function PromoSection() {
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-700"
+            className="text-lg text-slate-ink"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -96,7 +96,7 @@ export default function PromoSection() {
           </motion.div>
 
           <motion.button
-            className="bg-red-800 hover:bg-red-500 text-white px-8 py-4 rounded-lg font-semibold transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-red-300"
+            className="bg-red-800 hover:bg-red-500 text-sky px-8 py-4 rounded-lg font-semibold transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-red-300"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.6 }}

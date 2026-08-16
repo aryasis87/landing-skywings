@@ -31,7 +31,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+    <section className="relative overflow-hidden bg-gradient-to-br from-sky-2 to-sky-2">
       {/* Background Decorative SVG */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -68,13 +68,13 @@ export default function Contact() {
         >
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4"
+            className="text-5xl lg:text-6xl font-extrabold text-aviation mb-4"
           >
             Hubungi Kami
           </motion.h1>
           <motion.p
             variants={fadeInUp}
-            className="text-xl lg:text-2xl text-gray-700"
+            className="text-xl lg:text-2xl text-slate-ink"
           >
             Kami siap membantu Anda 24/7. Hubungi kami melalui informasi di bawah ini atau
             kirimkan pesan langsung.
@@ -92,37 +92,37 @@ export default function Contact() {
           {/* Contact Information */}
           <motion.div variants={fadeInLeft} className="space-y-8">
             <div className="flex items-center space-x-4">
-              <FaMapMarkerAlt className="text-3xl text-blue-600" />
+              <FaMapMarkerAlt className="text-3xl text-boarding" />
               <div>
-                <h3 className="text-2xl font-bold text-blue-900">Alamat</h3>
-                <p className="text-gray-600">
+                <h3 className="text-2xl font-bold text-aviation">Alamat</h3>
+                <p className="text-slate-ink">
                   Jl. Penerbangan No. 123, Jakarta, Indonesia
                 </p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <FaPhoneAlt className="text-3xl text-blue-600" />
+              <FaPhoneAlt className="text-3xl text-boarding" />
               <div>
-                <h3 className="text-2xl font-bold text-blue-900">Telepon</h3>
-                <p className="text-gray-600">+62 21 12345678</p>
+                <h3 className="text-2xl font-bold text-aviation">Telepon</h3>
+                <p className="text-slate-ink">+62 21 12345678</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <FaEnvelope className="text-3xl text-blue-600" />
+              <FaEnvelope className="text-3xl text-boarding" />
               <div>
-                <h3 className="text-2xl font-bold text-blue-900">Email</h3>
-                <p className="text-gray-600">info@skywings.co.id</p>
+                <h3 className="text-2xl font-bold text-aviation">Email</h3>
+                <p className="text-slate-ink">info@skywings.co.id</p>
               </div>
             </div>
             {/* Social Media Links */}
             <div className="flex items-center space-x-6 pt-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-blue-600 hover:text-blue-800">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-boarding hover:text-aviation">
                 <FaFacebookF className="text-2xl" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-blue-600 hover:text-blue-800">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-boarding hover:text-aviation">
                 <FaTwitter className="text-2xl" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-blue-600 hover:text-blue-800">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-boarding hover:text-aviation">
                 <FaInstagram className="text-2xl" />
               </a>
             </div>
@@ -132,7 +132,7 @@ export default function Contact() {
           <motion.form
             variants={fadeInRight}
             onSubmit={handleSubmit}
-            className="bg-white p-8 rounded-3xl shadow-2xl space-y-5"
+            className="bg-sky p-8 rounded-3xl shadow-2xl space-y-5"
           >
             <div className="grid gap-6">
               <motion.input
@@ -145,7 +145,7 @@ export default function Contact() {
                   setFormData({ ...formData, name: e.target.value })
                 }
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                className="w-full px-4 py-3 border border-aviation/12 rounded-lg focus:outline-none focus:ring-2 focus:ring-boarding transition-all"
               />
               <motion.input
                 variants={fadeInUp}
@@ -157,7 +157,7 @@ export default function Contact() {
                   setFormData({ ...formData, email: e.target.value })
                 }
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                className="w-full px-4 py-3 border border-aviation/12 rounded-lg focus:outline-none focus:ring-2 focus:ring-boarding transition-all"
               />
               <motion.textarea
                 variants={fadeInUp}
@@ -168,14 +168,14 @@ export default function Contact() {
                   setFormData({ ...formData, message: e.target.value })
                 }
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all h-36"
+                className="w-full px-4 py-3 border border-aviation/12 rounded-lg focus:outline-none focus:ring-2 focus:ring-boarding transition-all h-36"
               />
             </div>
             <motion.button
               variants={fadeInUp}
               type="submit"
               disabled={status === "loading"}
-              className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition disabled:opacity-50"
+              className="w-full px-6 py-3 bg-boarding text-sky rounded-lg hover:bg-aviation transition disabled:opacity-50"
             >
               {status === "loading" ? "Mengirim..." : "Kirim Pesan"}
             </motion.button>

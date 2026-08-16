@@ -45,7 +45,7 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="px-6 lg:px-16 py-20 bg-gradient-to-b from-gray-200 to-gray-300"
+      className="px-6 lg:px-16 py-20 bg-gradient-to-b from-sky-2 to-sky-2"
       aria-labelledby="features-title"
     >
       <motion.div
@@ -72,7 +72,7 @@ export default function FeaturesSection() {
         </motion.h2>
         <motion.p
           variants={fadeInUp}
-          className="text-lg lg:text-xl text-gray-700"
+          className="text-lg lg:text-xl text-slate-ink"
         >
           Teknologi terkini untuk pengalaman yang tak terlupakan
         </motion.p>
@@ -94,13 +94,13 @@ export default function FeaturesSection() {
               variants={fadeInUp}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-gradient-to-b from-white to-gray-50/30 backdrop-blur-xl rounded-tl-[4rem] rounded-b-2xl rounded-tr-[10px] p-8 transition-all duration-600 hover:-translate-y-3 shadow-lg hover:shadow-lg hover:shadow-gray-400/40"
+              className="bg-gradient-to-b from-white to-sky-2/30 backdrop-blur-xl rounded-tl-[4rem] rounded-b-2xl rounded-tr-[10px] p-8 transition-all duration-600 hover:-translate-y-3 shadow-lg hover:shadow-lg hover:shadow-gray-400/40"
               role="listitem"
               aria-label={feature.title}
             >
               <div className="flex items-center mb-2">
                 <motion.div
-                  className="text-2xl text-gray-800 mr-2"
+                  className="text-2xl text-aviation mr-2"
                   variants={iconVariants}
                   initial="initial"
                   whileHover="hover"
@@ -108,11 +108,11 @@ export default function FeaturesSection() {
                 >
                   <Icon />
                 </motion.div>
-                <h3 className="text-2xl font-bold text-gray-800 line-clamp-1">
+                <h3 className="text-2xl font-bold text-aviation line-clamp-1">
                   {feature.title}
                 </h3>
               </div>
-              <p className="text-gray-600 text-lg leading-relaxed line-clamp-3">
+              <p className="text-slate-ink text-lg leading-relaxed line-clamp-3">
                 {feature.description}
               </p>
             </motion.article>
