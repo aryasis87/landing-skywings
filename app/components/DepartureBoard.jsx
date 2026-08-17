@@ -20,7 +20,7 @@ const penerbangan = [
 
 const warnaStatus = {
   Boarding: 'text-runway',
-  'Tepat waktu': 'text-sky/85',
+  'Tepat waktu': 'text-sky/90',
 };
 
 export default function DepartureBoard() {
@@ -34,7 +34,7 @@ export default function DepartureBoard() {
               Lima rute yang paling sering diterbangkan
             </h2>
           </div>
-          <p className="pass-label shrink-0 text-sky/65">Jakarta (CGK) · Hari ini</p>
+          <p className="pass-label shrink-0 text-sky">Jakarta (CGK) · Hari ini</p>
         </div>
 
         {/* Papan: tabel di layar lebar, kartu bertumpuk di layar sempit */}
@@ -42,7 +42,7 @@ export default function DepartureBoard() {
           {/* Kepala tabel — hanya muncul mulai md */}
           <div className="hidden border-b border-sky/15 bg-aviation-2 md:grid md:grid-cols-[auto_1.4fr_auto_auto_auto_auto] md:gap-6 md:px-6 md:py-4">
             {['Kode', 'Tujuan', 'Berangkat', 'Durasi', 'Gerbang', 'Status'].map((h) => (
-              <span key={h} className="pass-label text-sky/65">
+              <span key={h} className="pass-label text-sky">
                 {h}
               </span>
             ))}
@@ -62,26 +62,26 @@ export default function DepartureBoard() {
 
                 <span className="mt-2 flex items-baseline gap-3 md:mt-0">
                   <span className="pass-code text-lg text-sky">{f.iata}</span>
-                  <span className="text-sm text-sky/85">{f.ke}</span>
+                  <span className="text-sm text-sky/90">{f.ke}</span>
                 </span>
 
                 {/* Di layar sempit, keempat data sisanya dirapikan jadi dua kolom */}
                 <span className="mt-3 grid grid-cols-2 gap-x-6 gap-y-2 md:contents">
                   <span className="md:block">
-                    <span className="pass-label block text-sky/65 md:hidden">Berangkat</span>
+                    <span className="pass-label block text-sky md:hidden">Berangkat</span>
                     <span className="pass-code text-sky">{f.jam}</span>
                   </span>
                   <span className="md:block">
-                    <span className="pass-label block text-sky/65 md:hidden">Durasi</span>
-                    <span className="text-sm text-sky/85">{f.durasi}</span>
+                    <span className="pass-label block text-sky md:hidden">Durasi</span>
+                    <span className="text-sm text-sky/90">{f.durasi}</span>
                   </span>
                   <span className="md:block">
-                    <span className="pass-label block text-sky/65 md:hidden">Gerbang</span>
+                    <span className="pass-label block text-sky md:hidden">Gerbang</span>
                     <span className="pass-code text-sky">{f.gerbang}</span>
                   </span>
                   <span className="md:block">
-                    <span className="pass-label block text-sky/65 md:hidden">Status</span>
-                    <span className={`pass-label ${warnaStatus[f.status] || 'text-sky/85'}`}>
+                    <span className="pass-label block text-sky md:hidden">Status</span>
+                    <span className={`pass-label ${warnaStatus[f.status] || 'text-sky/90'}`}>
                       {f.status}
                     </span>
                   </span>
@@ -95,7 +95,7 @@ export default function DepartureBoard() {
         <dl className="mt-8 grid gap-px border border-sky/15 bg-sky/15 sm:grid-cols-3 lg:grid-cols-5">
           {penerbangan.map((f) => (
             <div key={f.kode} className="bg-aviation px-5 py-4">
-              <dt className="pass-label text-sky/65">{f.iata} mulai</dt>
+              <dt className="pass-label text-sky">{f.iata} mulai</dt>
               <dd className="pass-code mt-1.5 text-sky">
                 Rp {f.mulai}
               </dd>
@@ -103,7 +103,7 @@ export default function DepartureBoard() {
           ))}
         </dl>
 
-        <p className="pass-label mt-8 leading-[1.7] text-sky/60">
+        <p className="pass-label mt-8 leading-[1.7] text-sky">
           Jadwal, gerbang, dan harga di atas adalah contoh untuk keperluan purwarupa desain.
         </p>
       </div>

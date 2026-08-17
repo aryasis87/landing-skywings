@@ -14,7 +14,8 @@
   --color-sky: #f3f6fa; /* putih langit — kertas pas naik */
   --color-sky-2: #e2e9f2;
   --color-slate-ink: #43536b; /* teks sekunder */
-  --color-runway: #ff6b35; /* jingga penanda — hemat pemakaian */
+  --color-runway: #ff6b35;
+  --color-runway-ink: #b83c0f; /* varian GELAP: khusus teks di atas bidang terang */ /* jingga penanda — hemat pemakaian */
   --color-boarding: #1b7fd4; /* biru aksen */
 }
 

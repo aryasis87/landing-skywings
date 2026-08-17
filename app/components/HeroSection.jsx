@@ -92,7 +92,7 @@ export default function HeroSection() {
           >
             Terbang tanpa
             <br />
-            <span className="text-runway">tanda tanya.</span>
+            <span className="text-runway-ink">tanda tanya.</span>
           </motion.h1>
 
           {/* Animated Paragraph */}
@@ -111,11 +111,10 @@ export default function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative group bg-gradient-to-r from-boarding to-cyan-500 px-8 py-5 rounded-full font-semibold text-sky shadow-lg transition-transform duration-300"
+              className="relative group bg-gradient-to-r from-aviation-2 to-aviation px-8 py-5 rounded-full font-semibold text-sky shadow-lg transition-transform duration-300"
               aria-label="Pesan tiket sekarang"
             >
               <span className="relative z-10">Pesan Tiket</span>
-              <span className="absolute inset-0 bg-sky/20 group-hover:bg-sky/40 transition-opacity rounded-full"></span>
             </motion.button>
 
             <motion.button
@@ -125,7 +124,7 @@ export default function HeroSection() {
               className="relative group flex items-center rounded-full bg-sky px-8 py-5 font-semibold text-aviation shadow-lg ring-1 ring-aviation/15 transition-all duration-300 hover:bg-sky-2"
               aria-label="Tonton video promosi"
             >
-              <FaPlay className="mr-3 h-5 w-5 text-runway" aria-hidden="true" />
+              <FaPlay className="mr-3 h-5 w-5 text-runway-ink" aria-hidden="true" />
               <span className="relative z-10">Tonton Video</span>
             </motion.button>
           </motion.div>

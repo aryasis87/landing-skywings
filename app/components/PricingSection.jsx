@@ -77,7 +77,7 @@ export default function PricingSection() {
             <div>
               {/* Plan Title & Description */}
               <h3 id={`plan-${plan.id}-title`} className="mb-2 text-2xl font-semibold text-sky">{plan.title}</h3>
-              <p className="mb-4 text-lg text-sky/80">{plan.description}</p>
+              <p className="mb-4 text-lg text-sky/90">{plan.description}</p>
               
               {/* Price */}
               <div className="text-3xl lg:text-4xl font-extrabold my-6 bg-clip-text"
@@ -92,7 +92,7 @@ export default function PricingSection() {
               {/* Features List */}
               <ul className="space-y-3 mb-6">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sky/85">
+                  <li key={i} className="flex items-center gap-2 text-sky/90">
                     <svg 
                       className="h-5 w-5 shrink-0 text-runway" 
                       aria-hidden="true" 
