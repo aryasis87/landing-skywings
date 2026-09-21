@@ -5,10 +5,10 @@ import "./globals.css";
 const outfit = Outfit({ variable: "--font-outfit", subsets: ["latin"], weight: ["500", "700", "800"] });
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"Organization","name":"SkyWings","description":"Maskapai penerbangan modern","url":"https://skywings.pintuweb.com"};
+const __jsonld = {"@context":"https://schema.org","@type":"Organization","name":"SkyWings","description":"Maskapai penerbangan modern","url":"https://landing-skywings.vercel.app"};
 
 export const metadata = {
-  metadataBase: new URL("https://skywings.pintuweb.com"),
+  metadataBase: new URL("https://landing-skywings.vercel.app"),
   title: "SkyWings — Rasakan Keajaiban Terbang",
   description: "SkyWings: solusi penerbangan modern — pesan tiket mudah, terbang cepat, aman, dan nyaman.",
   applicationName: "SkyWings",
@@ -16,11 +16,11 @@ export const metadata = {
   authors: [{ name: "SkyWings" }],
   creator: "SkyWings",
   publisher: "SkyWings",
-  alternates: { canonical: "https://skywings.pintuweb.com" },
+  alternates: { canonical: "https://landing-skywings.vercel.app" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://skywings.pintuweb.com",
+    url: "https://landing-skywings.vercel.app",
     siteName: "SkyWings",
     title: "SkyWings — Rasakan Keajaiban Terbang",
     description: "SkyWings: solusi penerbangan modern — pesan tiket mudah, terbang cepat, aman, dan nyaman.",
