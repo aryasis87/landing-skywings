@@ -63,9 +63,9 @@ export default function BlogPost() {
           <motion.div variants={fadeInUp} className="absolute bottom-6 left-6 text-sky">
             <h1 className="text-4xl lg:text-5xl font-bold mb-2">{post.title}</h1>
             <div className="flex items-center space-x-4 text-sm">
-              <span>Published on {post.date}</span>
+              <span>Terbit {post.date}</span>
               <span>•</span>
-              <span>{readingTime} min read</span>
+              <span>{readingTime} menit baca</span>
             </div>
           </motion.div>
         </motion.div>
@@ -78,7 +78,7 @@ export default function BlogPost() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto"
         >
-          <motion.div variants={fadeInUp} className="prose prose-lg prose-blue mb-12">
+          <motion.div variants={fadeInUp} className="article-body mb-12">
             {/* Render HTML konten dengan dangerouslySetInnerHTML */}
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </motion.div>
