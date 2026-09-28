@@ -26,11 +26,6 @@ Kelas: ${flightClass}`;
     alert("Informasi telah disalin ke clipboard!");
   };
 
-  const waNumber = "6281234567890";
-  const waMessage = encodeURIComponent(
-    `Halo, saya ingin informasi lebih lanjut mengenai penerbangan:\n${formResultText}`
-  );
-  const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
 
   const handleFinish = () => {
     setShowResultModal(true);
@@ -312,14 +307,6 @@ Kelas: ${flightClass}`;
                 >
                   Salin Informasi
                 </button>
-                <a
-                  href={waLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-success"
-                >
-                  Chat WA
-                </a>
               </div>
             </motion.div>
           </motion.div>
