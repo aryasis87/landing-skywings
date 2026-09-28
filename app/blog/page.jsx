@@ -1,28 +1,16 @@
 // app/blog/page.jsx
 "use client";
-import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "../utils/animations";
 import { blogPosts } from "../data/blog";
 
-// Komponen ClientOnly: memastikan konten hanya dirender di sisi client
-function ClientOnly({ children }) {
-  const [hasMounted, setHasMounted] = useState(false);
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-  if (!hasMounted) return null;
-  return <>{children}</>;
-}
-
 export default function Blog() {
   // Tampilkan semua artikel tanpa filter
   const posts = blogPosts;
 
   return (
-    <ClientOnly>
       <section className="px-6 lg:px-16 py-10 lg:py-16 bg-sky">
         {/* Header */}
         <motion.div
@@ -76,7 +64,7 @@ export default function Blog() {
                   <p className="text-slate-ink mb-4">{post.excerpt}</p>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="text-boarding hover:text-aviation font-medium flex items-center gap-2"
+                    className="text-aviation-2 hover:text-aviation underline-offset-4 hover:underline font-medium flex items-center gap-2"
                   >
                     Baca Selengkapnya
                     <svg
@@ -99,6 +87,5 @@ export default function Blog() {
           </motion.div>
         </div>
       </section>
-    </ClientOnly>
   );
 }
