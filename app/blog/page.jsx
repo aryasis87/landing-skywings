@@ -1,91 +1,49 @@
-// app/blog/page.jsx
-"use client";
-import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer } from "../utils/animations";
+import Link from "next/link";
 import { blogPosts } from "../data/blog";
 
+const tanggal = (iso) => new Date(`${iso}T12:00:00+07:00`).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta" });
+
 export default function Blog() {
-  // Tampilkan semua artikel tanpa filter
-  const posts = blogPosts;
-
+  const posts = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date));
+  const [utama, ...lain] = posts;
   return (
-      <section className="px-6 lg:px-16 py-10 lg:py-16 bg-sky">
-        {/* Header */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center mb-12"
-        >
-          <motion.h1
-            variants={fadeInUp}
-            className="text-5xl lg:text-6xl font-extrabold mb-4 text-aviation"
-          >
-            Blog Terbaru
-          </motion.h1>
-          <motion.p
-            variants={fadeInUp}
-            className="text-xl lg:text-2xl text-slate-ink"
-          >
-            Tips perjalanan, promo tiket, dan informasi terbaru untuk Anda
-          </motion.p>
-        </motion.div>
+    <main className="px-6 pt-32 pb-24">
+      <div className="mx-auto max-w-6xl">
+        <p className="pass-label text-runway-ink">Blog perjalanan</p>
+        <h1 className="mt-4 max-w-3xl text-[2.7rem] leading-[1.02] font-extrabold text-aviation md:text-6xl">Catatan sebelum terbang</h1>
+        <p className="mt-5 max-w-xl text-lg leading-relaxed">Cara memesan, berburu harga, packing, dan apa yang terjadi di balik layar penerbangan.</p>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Daftar Artikel */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
-            {posts.map((post) => (
-              <motion.div
-                key={post.id}
-                variants={fadeInUp}
-                className="bg-sky rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
-              >
-                <div className="relative aspect-video">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 500px"
-                  />
+        <Link href={`/blog/${utama.slug}`} className="group mt-12 grid overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-lg md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+          <div className="relative aspect-[16/10] md:aspect-auto">
+            <Image src={utama.image} alt="" fill priority sizes="(max-width: 768px) 100vw, 600px" className="object-cover" />
+          </div>
+          <div className="p-7 md:p-10">
+            <p className="pass-label text-runway-ink">{utama.category} · {tanggal(utama.date)}</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-aviation">{utama.title}</h2>
+            <p className="mt-3 leading-relaxed">{utama.excerpt}</p>
+            <span className="pass-label mt-6 inline-block border-b-2 border-aviation pb-1 text-aviation">Baca artikel</span>
+          </div>
+        </Link>
+
+        <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {lain.map((p) => (
+            <li key={p.slug}>
+              <Link href={`/blog/${p.slug}`} className="block h-full overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-lg">
+                <div className="relative aspect-[16/10]">
+                  <Image src={p.image} alt="" fill sizes="(max-width: 640px) 100vw, 360px" className="object-cover" />
                 </div>
                 <div className="p-6">
-                  <h2 className="text-2xl font-semibold mb-3 text-aviation">
-                    {post.title}
-                  </h2>
-                  <p className="text-slate-ink mb-4">{post.excerpt}</p>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="text-aviation-2 hover:text-aviation underline-offset-4 hover:underline font-medium flex items-center gap-2"
-                  >
-                    Baca Selengkapnya
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </Link>
+                  <p className="pass-label text-runway-ink">{p.category} · {tanggal(p.date)}</p>
+                  <h2 className="mt-2 text-xl font-bold text-aviation">{p.title}</h2>
+                  <p className="mt-2 text-sm leading-relaxed">{p.excerpt}</p>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-6 text-xs">Foto artikel: rawpixel, Wikimedia Commons, dan StockSnap (CC0).</p>
+      </div>
+    </main>
   );
 }

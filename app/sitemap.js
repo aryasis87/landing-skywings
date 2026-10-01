@@ -3,7 +3,7 @@ import { blogPosts } from "./data/blog";
 const SITE = "https://landing-skywings.vercel.app";
 
 export default function sitemap() {
-  const pages = ["/about", "/services", "/blog", "/contact"].map((p) => ({
+  const pages = ["/jadwal", "/layanan", "/tentang", "/kontak", "/blog"].map((p) => ({
     url: `${SITE}${p}`,
     lastModified: new Date(),
     changeFrequency: "monthly",

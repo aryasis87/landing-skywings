@@ -1,68 +1,51 @@
-// app/blog/[slug]/BlogArticle.jsx
-"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-import { fadeInUp, staggerContainer } from "../../utils/animations";
 
-// Isi artikel sengaja TIDAK dianimasikan dari keadaan tersembunyi: teksnya harus terbaca
-// di HTML awal (mesin pencari, pembaca tanpa JavaScript). Animasi hanya untuk hiasan.
+const tanggal = (iso) => new Date(`${iso}T12:00:00+07:00`).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta" });
+
+// Dirender di server: isi artikel ada di HTML awal untuk mesin pencari dan pembaca tanpa JavaScript.
 export default function BlogArticle({ post, related, readingTime }) {
+  const bagikan = [
+    ["Facebook", `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(post.url)}`],
+    ["X", `https://twitter.com/intent/tweet?url=${encodeURIComponent(post.url)}&text=${encodeURIComponent(post.title)}`],
+    ["LinkedIn", `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(post.url)}`],
+  ];
   return (
-    <section className="px-6 lg:px-16 py-10 lg:py-16 bg-sky">
-      <div className="relative w-full h-96 rounded-2xl overflow-hidden mb-12 shadow-lg">
-        <Image src={post.image} alt="" fill priority className="object-cover" sizes="(max-width: 768px) 100vw, 1100px" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-aviation opacity-80"></div>
-        <div className="absolute bottom-6 left-6 right-6 text-sky">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-2">{post.title}</h1>
-          <div className="flex items-center space-x-4 text-sm">
-            <span>Terbit {post.date}</span>
-            <span aria-hidden="true">•</span>
-            <span>{readingTime} menit baca</span>
-          </div>
+    <main className="px-6 pt-28 pb-24">
+      <article className="mx-auto max-w-3xl">
+        <nav aria-label="Remah roti" className="pass-label flex gap-2">
+          <Link href="/blog" className="text-runway-ink hover:text-aviation">Blog</Link>
+          <span aria-hidden="true">/</span>
+          <span>{post.category}</span>
+        </nav>
+        <h1 className="mt-5 text-[2.4rem] leading-[1.05] font-extrabold text-aviation md:text-5xl">{post.title}</h1>
+        <p className="pass-label mt-4">{tanggal(post.date)} · {readingTime} menit baca</p>
+        <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl">
+          <Image src={post.image} alt="" fill priority sizes="(max-width: 768px) 100vw, 768px" className="object-cover" />
         </div>
-      </div>
+        <div className="article-body mt-10" dangerouslySetInnerHTML={{ __html: post.content }} />
 
-      <div className="max-w-3xl mx-auto">
-        <div className="article-body mb-12" dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div aria-hidden="true" className="perforation mt-12 text-aviation" />
+        <p className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+          <span className="font-semibold text-aviation">Bagikan:</span>
+          {bagikan.map(([n, u]) => <a key={n} href={u} target="_blank" rel="noopener noreferrer" className="font-semibold text-aviation-2 underline underline-offset-4 hover:text-aviation">{n}<span className="sr-only"> (tab baru)</span></a>)}
+        </p>
+      </article>
 
-        <div className="flex items-center space-x-4 mb-12">
-          <span className="font-semibold">Bagikan:</span>
-          <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(post.url)}`} target="_blank" rel="noopener noreferrer" aria-label="Bagikan ke Facebook" className="text-boarding hover:text-aviation">
-            <FaFacebookF size={24} />
-          </a>
-          <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(post.url)}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" aria-label="Bagikan ke X (Twitter)" className="text-boarding hover:text-aviation">
-            <FaTwitter size={24} />
-          </a>
-          <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(post.url)}`} target="_blank" rel="noopener noreferrer" aria-label="Bagikan ke LinkedIn" className="text-aviation hover:text-boarding">
-            <FaLinkedinIn size={24} />
-          </a>
-        </div>
-
-        <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true }} className="mt-12">
-          <h2 className="text-3xl font-bold text-aviation mb-6">Artikel Terkait</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {related.map((relPost) => (
-              <Link key={relPost.id} href={`/blog/${relPost.slug}`}>
-                <motion.div variants={fadeInUp} className="bg-sky rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                  <div className="relative h-40">
-                    <Image src={relPost.image} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 300px" />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-xl font-semibold text-aviation mb-2">{relPost.title}</h3>
-                    <p className="text-slate-ink text-sm">{relPost.excerpt}</p>
-                  </div>
-                </motion.div>
+      <section aria-labelledby="terkait" className="mx-auto mt-16 max-w-6xl">
+        <h2 id="terkait" className="text-3xl font-extrabold text-aviation">Artikel lain</h2>
+        <ul className="mt-6 grid gap-6 md:grid-cols-3">
+          {related.map((p) => (
+            <li key={p.slug}>
+              <Link href={`/blog/${p.slug}`} className="block h-full rounded-2xl bg-white p-6 shadow-sm hover:shadow-lg">
+                <span className="pass-label text-runway-ink">{p.category}</span>
+                <span className="mt-2 block text-xl font-bold text-aviation">{p.title}</span>
+                <span className="mt-2 block text-sm leading-relaxed">{p.excerpt}</span>
               </Link>
-            ))}
-          </div>
-        </motion.div>
-
-        <Link href="/blog" className="mt-12 inline-block px-8 py-4 bg-aviation text-sky rounded-lg hover:bg-aviation-2 transition">
-          Kembali ke Blog
-        </Link>
-      </div>
-    </section>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
   );
 }

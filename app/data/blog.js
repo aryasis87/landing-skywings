@@ -23,7 +23,7 @@ export const blogPosts = [
 <h2>5. Bayar dan simpan e-tiket</h2>
 <p>Setelah pembayaran terkonfirmasi, e-tiket berisi kode pemesanan akan muncul. Simpan kode itu, lalu lakukan check-in online saat dibuka untuk memperoleh boarding pass digital.</p>
 `,
-    image: "/images/yogyakarta.jpg",
+    image: "/images/rute/yogyakarta.webp",
     date: "2025-01-01",
     category: "Promo",
     url: `${SITE}/blog/cara-memesan-tiket`,
@@ -50,7 +50,7 @@ export const blogPosts = [
 </ul>
 <p>Bandingkan harga total, bukan harga yang tertera di awal. Tiket yang sedikit lebih mahal tetapi sudah termasuk bagasi sering kali lebih hemat pada akhirnya.</p>
 `,
-    image: "/images/bali.jpg",
+    image: "/images/rute/bali.webp",
     date: "2025-01-15",
     category: "Promo",
     url: `${SITE}/blog/diskon-tiket-spesial`,
@@ -78,7 +78,7 @@ export const blogPosts = [
 <h2>Pertimbangkan asuransi perjalanan</h2>
 <p>Asuransi membantu bila terjadi keterlambatan panjang, bagasi hilang, atau sakit di perjalanan. Baca cakupannya dan simpan nomor layanan daruratnya.</p>
 `,
-    image: "/images/raja-ampat.jpg",
+    image: "/images/rute/labuan-bajo.webp",
     date: "2025-02-15",
     category: "Tips",
     url: `${SITE}/blog/tips-perjalanan`,
@@ -106,7 +106,7 @@ export const blogPosts = [
 <h2>Beri tanda pada koper</h2>
 <p>Pasang label berisi nama dan nomor telepon, serta pita atau stiker yang mudah dikenali. Koper Anda akan lebih cepat ditemukan di ban bagasi.</p>
 `,
-    image: "/images/lombok.jpg",
+    image: "/images/rute/lombok.webp",
     date: "2025-03-01",
     category: "Tips",
     url: `${SITE}/blog/panduan-packing`,
@@ -134,7 +134,7 @@ export const blogPosts = [
   <li>Ikuti instruksi awak kabin, terutama saat lepas landas dan mendarat.</li>
 </ul>
 `,
-    image: "/images/city.jpg",
+    image: "/images/rute/pesawat-gerbang.webp",
     date: "2025-03-10",
     category: "Inovasi",
     url: `${SITE}/blog/keamanan-penerbangan`,
@@ -158,7 +158,7 @@ export const blogPosts = [
 <h2>Bagasi yang bisa dilacak</h2>
 <p>Label bagasi digital dan pelacakan berbasis pemindaian membuat maskapai tahu posisi koper di setiap titik perjalanan. Kalau koper tertinggal, penelusurannya jadi jauh lebih cepat.</p>
 `,
-    image: "/images/mountain.jpg",
+    image: "/images/rute/ruang-tunggu.webp",
     date: "2025-04-01",
     category: "Inovasi",
     url: `${SITE}/blog/teknologi-terbaru`,
